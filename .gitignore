@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# desktop.ini car je ne sais pas ce que c'est et cela a fait foirer le commit git
+desktop.ini
