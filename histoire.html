@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histoire — Buzenval</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sources/style.css">
+  <style>
+    .history-page{padding-top:96px}
+    .history-hero{
+      min-height:220px;
+      display:flex;
+      align-items:center;
+      background:linear-gradient(rgba(14,31,53,.6),rgba(14,31,53,.6)),
+      url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+      color:#fff;
+    }
+    .history-layout{
+      display:grid;
+      grid-template-columns:1fr 2fr;
+      gap:32px;
+      margin-top:40px;
+      align-items:start;
+    }
+    .choice-panel,
+    .content-panel{
+      background:#fff;
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:22px;
+      box-shadow:0 15px 35px rgba(15,23,42,.06);
+      padding:28px;
+    }
+    .choice-grid{
+      display:grid;
+      gap:18px;
+      margin-top:20px;
+    }
+    .choice-card{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      width:100%;
+      padding:22px 20px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#f8fafc,#eef4ff);
+      border:2px solid transparent;
+      text-decoration:none;
+      color:var(--dark);
+      cursor:pointer;
+      transition:.25s ease;
+      text-align:left;
+    }
+    .choice-card:hover,
+    .choice-card.active{
+      transform:translateY(-3px);
+      border-color:var(--primary);
+      box-shadow:0 12px 24px rgba(28,76,125,.09);
+      background:linear-gradient(135deg,#eef4ff,#e0ecff);
+    }
+    .choice-card strong{
+      display:block;
+      font-size:1.2rem;
+      margin-bottom:2px;
+    }
+    .choice-card span{
+      color:var(--text);
+      line-height:1.6;
+    }
+    .content-panel{
+      min-height:420px;
+    }
+    .panel-content{
+      display:none;
+      animation:fadeIn .25s ease;
+    }
+    .panel-content.active{
+      display:block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .video-panel video{
+      width:100%;
+      border-radius:12px;
+      background:#000;
+      margin-top:16px;
+    }
+    .pdf-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .pdf-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:12px 14px;
+      border:1px solid rgba(15,23,42,.08);
+      border-radius:10px;
+      background:#f8fafc;
+    }
+    .pdf-name{
+      font-weight:600;
+      color:var(--dark);
+    }
+    .pdf-item a{
+      color:#1d4ed8;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .pdf-item a:hover{
+      color:#1e40af;
+      text-decoration:underline;
+    }
+    .section-label{
+      display:inline-block;
+      margin-bottom:12px;
+      font-size:.8rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--primary);
+      font-weight:700;
+    }
+    @media (max-width: 900px){
+      .history-layout{grid-template-columns:1fr}
+      .content-panel,
+      .choice-panel{padding:20px 16px}
+      .choice-card{padding:18px 16px}
+    }
+    @media (max-width: 560px){
+      .history-page{padding-top:72px}
+      .history-hero{min-height:160px}
+      .history-layout{gap:18px; margin-top:20px}
+      .choice-card strong{font-size:1.05rem}
+      .choice-card span{font-size:0.95rem}
+      .pdf-item{flex-direction:column; align-items:flex-start}
+      .pdf-item a{width:100%; text-align:left}
+      h2{font-size:1.8rem}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">Buzenval</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+      <div class="nav-menu">
+        <a href="index.html">Accueil</a>
+        <a href="histoire.html">Histoire</a>
+        <a href="index.html#patrimoine">Patrimoine</a>
+        <a href="index.html#nature">Nature</a>
+        <a href="archive-video.html">Archives</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="history-hero history-page">
+    <div class="container">
+      <h1 style="color:white; margin:0;">Histoire</h1>
+    </div>
+  </header>
+
+  <main class="container" style="padding-bottom:80px;">
+    <div class="history-layout">
+      <section class="choice-panel">
+        <span class="section-label">Choix</span>
+        <h2>Choisissez votre parcours</h2>
+        <div class="choice-grid">
+          <button class="choice-card active" type="button" data-target="film-panel">
+            <strong>Film 31 rue du 19 janvier</strong>
+            <span>Visionnez le film historique de Buzenval.</span>
+          </button>
+          <button class="choice-card" type="button" data-target="documents-panel">
+            <strong>Buzenval se raconte</strong>
+            <span>Consultez et téléchargez les dossiers documentaires.</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="content-panel">
+        <div class="panel-content active" id="film-panel">
+          <div class="video-panel" id="film-lecture">
+            <span class="section-label">Film</span>
+            <h2>31 rue du 19 janvier</h2>
+            <video controls preload="metadata">
+              <source src="medias/31-rue-19-janvier.mp4" type="video/mp4">
+              Votre navigateur ne prend pas en charge ce format vidéo.
+            </video>
+            <p style="margin-top:12px;">Film historique de Buzenval.</p>
+          </div>
+        </div>
+
+        <div class="panel-content" id="documents-panel">
+          <div class="pdf-panel" id="buzenval-se-raconte">
+            <span class="section-label">Documents</span>
+            <h2>Buzenval se raconte</h2>
+            <p>Retrouvez ici les dossiers disponibles en téléchargement.</p>
+            <div class="pdf-list">
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°1</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B01.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°2</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B02.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°3</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B03.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°4</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B04.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°5</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B05.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°6</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B06.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°7</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B07.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°8</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B08.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°9</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B09.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°10</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B010.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°11</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B011.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°12</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B012.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°13</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B013.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+              <div class="pdf-item"><span class="pdf-name">Buzenval se raconte N°14</span><a href="documents/Buzenval%20se%20raconte%20N%C2%B014.pdf" target="_blank" rel="noopener">Télécharger</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p style="color:#cbd5e1">© 2026 Buzenval</p>
+  </footer>
+
+  <script>
+    (function(){
+      const btn = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.nav-menu');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', ()=> menu.classList.toggle('open'));
+      document.addEventListener('click', (event)=>{
+        if(!menu.classList.contains('open')) return;
+        if(event.target === btn || menu.contains(event.target)) return;
+        menu.classList.remove('open');
+      });
+    })();
+
+    const choiceButtons = document.querySelectorAll('.choice-card');
+    const panels = document.querySelectorAll('.panel-content');
+
+    choiceButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const target = button.dataset.target;
+
+        choiceButtons.forEach((item) => item.classList.toggle('active', item === button));
+        panels.forEach((panel) => panel.classList.toggle('active', panel.id === target));
+      });
+    });
+  </script>
+</body>
+</html>

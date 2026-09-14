@@ -112,6 +112,30 @@ nav{
 .nav-menu a{
     color:white;
     text-decoration:none;
+    position:relative;
+    transition:color .2s ease, opacity .2s ease, transform .2s ease;
+}
+
+.nav-menu a:hover{
+    color:#dbeafe;
+    transform:translateY(-1px);
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:100%;
+    height:2px;
+    background:#dbeafe;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .2s ease;
+}
+
+.nav-menu a:hover::after{
+    transform:scaleX(1);
 }
 
 /* Bouton hamburger mobile */
