@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   const playerTitle = document.getElementById('player-title');
   const count = document.getElementById('count');
   let currentIndex = -1;
-  // Helper: prettify a filename to a readable title
+  // Aide : rendre un nom de fichier lisible en titre
   function prettifySrc(src){
     try{
       const parts = src.split('/');
@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }catch(e){ return src; }
   }
 
-  // Helper: generate thumbnail from a video source using an offscreen video + canvas
+  // Aide : générer une miniature depuis une source vidéo en utilisant
+  // un élément <video> hors écran et un <canvas>
   function generateThumbnailDataURL(src, seekTime = 0.5, width = 320){
     return new Promise((resolve, reject)=>{
       try{
@@ -38,13 +39,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }, 8000);
 
         video.addEventListener('loadeddata', ()=>{
-          // seek to a small time
+          // se placer à un petit instant
           const seek = Math.min(seekTime, Math.max(0.1, video.duration * 0.05 || 0.5));
           const doSeek = ()=>{
             try{
               video.currentTime = seek;
             }catch(e){
-              // some browsers throw if currentTime set too early
+              // certains navigateurs lèvent une exception si currentTime est défini trop tôt
               setTimeout(()=>{ video.currentTime = seek; }, 200);
             }
           };
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         });
 
         video.addEventListener('error', onError);
-        // start loading
+        // commencer le chargement
         video.load();
       }catch(err){ reject(err); }
     });
@@ -85,7 +86,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       item.dataset.src = v.src;
       item.dataset.index = i;
 
-      // thumbnail: prefer `v.thumb`, then cache (localStorage), else generate client-side
+      // miniature : préférer `v.thumb`, sinon cache (localStorage), sinon générer côté client
       let thumb;
       const storageKey = 'thumb:' + v.src;
       const cached = (()=>{ try{ return localStorage.getItem(storageKey); }catch(e){ return null; } })();
@@ -103,7 +104,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         thumb = document.createElement('div');
         thumb.className = 'video-thumb';
         thumb.textContent = (v.title || v.src).slice(0,18);
-        // generate in background and replace when ready
+        // générer en arrière-plan et remplacer quand prêt
         generateThumbnailDataURL(v.src, 0.5, 320).then(dataUrl=>{
           try{ localStorage.setItem(storageKey, dataUrl); }catch(e){}
           const img = document.createElement('img');
@@ -131,18 +132,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
         playVideo(i, v);
       });
 
-      // no OCR: titles come from JSON or filename
+      // pas d'OCR : les titres proviennent du JSON ou du nom de fichier
 
       listEl.appendChild(item);
     });
 
     if(videos.length>0){
-      // set first video as selected but do not autoplay
+      // définir la première vidéo sélectionnée mais ne pas lancer la lecture automatiquement
       const first = videos[0];
       playerSource.src = first.src;
       player.load();
       playerTitle.textContent = first.title || prettifySrc(first.src);
-      // mark first item active in the list
+      // marquer le premier élément comme actif dans la liste
       const firstItem = listEl.querySelector('.video-item[data-index="0"]');
       if(firstItem) firstItem.classList.add('active');
     }

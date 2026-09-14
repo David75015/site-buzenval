@@ -10,11 +10,13 @@ const THUMBS_DIR = path.join(ROOT, 'medias', 'thumbs');
 function ensureDir(dir){ if(!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true }); }
 
 function ffmpegExtractFrame(videoPath, outPath, timeSec = 0.5){
+  // nécessite que `ffmpeg` soit installé sur le système
   const cmd = `ffmpeg -y -i "${videoPath}" -ss ${timeSec} -vframes 1 -q:v 2 "${outPath}"`;
   execSync(cmd, { stdio: 'ignore' });
 }
 
 function prettifyBase(base){
+  // transforme un nom de fichier en titre lisible (ex: mon_fichier -> Mon Fichier)
   return base.replace(/[_\-]+/g,' ').replace(/\b\w/g, c=>c.toUpperCase());
 }
 
