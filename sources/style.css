@@ -1,4 +1,4 @@
-*{
+                                                                                                                                                                                                                                                                                            *{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -86,7 +86,7 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 5%;
+    padding:12px 5%;
 }
 
 .logo{
@@ -94,11 +94,15 @@ nav{
     font-weight:700;
     font-size:1.3rem;
     text-decoration:none;
+    margin-right:12px;
 }
 
 .nav-menu{
     display:flex;
-    gap:30px;
+    gap:18px;
+    flex:1 1 auto;
+    justify-content:flex-end;
+    flex-wrap:wrap;
 }
 
 .nav-menu a{
@@ -250,3 +254,13 @@ footer p{
     display:none;
 }
 }
+
+/* Archive page helpers */
+.video-item.active{
+    background: linear-gradient(90deg, rgba(59,130,246,0.08), rgba(59,130,246,0.04));
+    border-left: 4px solid #3b82f6;
+}
+
+/* Smooth scrollbar for lists */
+#video-list::-webkit-scrollbar{width:10px}
+#video-list::-webkit-scrollbar-thumb{background:rgba(0,0,0,.12);border-radius:10px}

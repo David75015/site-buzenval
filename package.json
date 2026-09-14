@@ -1,0 +1,10 @@
+{
+  "name": "site-buzenval-tools",
+  "version": "1.0.0",
+  "description": "Utilities for site-buzenval: generate thumbnails and titles",
+  "main": "tools/generate_media_assets.js",
+  "scripts": {
+    "generate-media": "node tools/generate_media_assets.js"
+  },
+  "dependencies": {}
+}
