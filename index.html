@@ -29,6 +29,8 @@
 		<div class="nav-container">
 			<a href="#" class="logo">Buzenval</a>
 
+			<button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+
 			<div class="nav-menu">
 				<a href="#accueil">Accueil</a>
 				<a href="#histoire">Histoire</a>
@@ -258,6 +260,20 @@
 
 	</footer>
 	<script src="sources/script.js"></script>
+	<script>
+		// bascule du menu mobile
+		(function(){
+			const btn = document.querySelector('.nav-toggle');
+			const menu = document.querySelector('.nav-menu');
+			if(!btn || !menu) return;
+			btn.addEventListener('click', ()=> menu.classList.toggle('open'));
+			document.addEventListener('click', (e)=>{
+				if(!menu.classList.contains('open')) return;
+				if(e.target === btn || menu.contains(e.target)) return;
+				menu.classList.remove('open');
+			});
+		})();
+	</script>
 
 </body>
 
