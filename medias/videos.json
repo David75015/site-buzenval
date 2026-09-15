@@ -1,18 +1,82 @@
 [
-  { "src": "medias/5910EJ_53949.mp4", "title": "Les sports" },
-  { "src": "medias/1955_27_1.mp4", "title": "Horizons du monde 27" },
-  { "src": "medias/1737GJ_00004.mp4", "title": "Des 'Mimi Pinson' en promenade à Rueil-Malmaison" },
-  { "src": "medias/2105GJ_00003.mp4", "title": "Anniversaire des combats de la guerre de 1870 à Montretout et Buzenval" },
-  { "src": "medias/1961_23_20_NU.mp4", "title": "XXXXXXXXXXXXXXX" },
-  { "src": "medias/1404GJ_00014.mp4", "title": "Manifestation patriotique à la mémoire des batailles de Buzenval et de Montretout, sur les lieux-mêmes" },
-  { "src": "medias/AF_94_4.mp4", "title": "Un gala à la maison 'L'impératrice des Roses'" },
-  { "src": "medias/6001GJ_00005.mp4", "title": "Passage à la nouvelle monnaie" },
-  { "src": "medias/1955_31_13_NU.mp4", "title": "Accident" },
-  { "src": "medias/1955_49_1.mp4", "title": "Horizons du monde 49" },
-  { "src": "medias/2519GJ_00005.mp4", "title": "Régates de voiliers organisées par le cercle Nautique de Chatou" },
-  { "src": "medias/1312GJ_00008.mp4", "title": "A Rueil (Seine-et-Oise), une usine à gaz est détruite par une explosion" },
-  { "src": "medias/7300GNU42416.mp4", "title": "Tour de France municipal" },
-  { "src": "medias/1605GJ_00003.mp4", "title": "Hommages aux morts de la bataille de 1871, à Buzenval" },
-  { "src": "medias/1952_14_16_NU.mp4", "title": "XXXXXXXXXXXXXXX" },
-  { "src": "medias/1960_1_1.mp4", "title": "Le Franc est mort vive le nouveau franc" }
+  {
+    "src": "medias/5910EJ_53949.mp4",
+    "title": "Les sports",
+    "thumb": "medias/thumbs/5910EJ_53949.jpg"
+  },
+  {
+    "src": "medias/1955_27_1.mp4",
+    "title": "Horizons du monde 27",
+    "thumb": "medias/thumbs/1955_27_1.jpg"
+  },
+  {
+    "src": "medias/1737GJ_00004.mp4",
+    "title": "Des 'Mimi Pinson' en promenade à Rueil-Malmaison",
+    "thumb": "medias/thumbs/1737GJ_00004.jpg"
+  },
+  {
+    "src": "medias/2105GJ_00003.mp4",
+    "title": "Anniversaire des combats de la guerre de 1870 à Montretout et Buzenval",
+    "thumb": "medias/thumbs/2105GJ_00003.jpg"
+  },
+  {
+    "src": "medias/1961_23_20_NU.mp4",
+    "title": "XXXXXXXXXXXXXXX",
+    "thumb": "medias/thumbs/1961_23_20_NU.jpg"
+  },
+  {
+    "src": "medias/1404GJ_00014.mp4",
+    "title": "Manifestation patriotique à la mémoire des batailles de Buzenval et de Montretout, sur les lieux-mêmes",
+    "thumb": "medias/thumbs/1404GJ_00014.jpg"
+  },
+  {
+    "src": "medias/AF_94_4.mp4",
+    "title": "Un gala à la maison 'L'impératrice des Roses'",
+    "thumb": "medias/thumbs/AF_94_4.jpg"
+  },
+  {
+    "src": "medias/6001GJ_00005.mp4",
+    "title": "Passage à la nouvelle monnaie",
+    "thumb": "medias/thumbs/6001GJ_00005.jpg"
+  },
+  {
+    "src": "medias/1955_31_13_NU.mp4",
+    "title": "Accident",
+    "thumb": "medias/thumbs/1955_31_13_NU.jpg"
+  },
+  {
+    "src": "medias/1955_49_1.mp4",
+    "title": "Horizons du monde 49",
+    "thumb": "medias/thumbs/1955_49_1.jpg"
+  },
+  {
+    "src": "medias/2519GJ_00005.mp4",
+    "title": "Régates de voiliers organisées par le cercle Nautique de Chatou",
+    "thumb": "medias/thumbs/2519GJ_00005.jpg"
+  },
+  {
+    "src": "medias/1312GJ_00008.mp4",
+    "title": "A Rueil (Seine-et-Oise), une usine à gaz est détruite par une explosion",
+    "thumb": "medias/thumbs/1312GJ_00008.jpg"
+  },
+  {
+    "src": "medias/7300GNU42416.mp4",
+    "title": "Tour de France municipal",
+    "thumb": "medias/thumbs/7300GNU42416.jpg"
+  },
+  {
+    "src": "medias/1605GJ_00003.mp4",
+    "title": "Hommages aux morts de la bataille de 1871, à Buzenval",
+    "thumb": "medias/thumbs/1605GJ_00003.jpg"
+  },
+  {
+    "src": "medias/1952_14_16_NU.mp4",
+    "title": "XXXXXXXXXXXXXXX",
+    "thumb": "medias/thumbs/1952_14_16_NU.jpg"
+  },
+  {
+    "src": "medias/1960_1_1.mp4",
+    "title": "Le Franc est mort vive le nouveau franc",
+    "thumb": "medias/thumbs/1960_1_1.jpg"
+  }
 ]
