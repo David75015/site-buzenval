@@ -1,1 +1,2 @@
+*.mp4 filter=lfs diff=lfs merge=lfs -text
 medias/31.[[:space:]]Rue[[:space:]]du[[:space:]]19[[:space:]]Janvier[[:space:]](150[[:space:]]ans).mp4 filter=lfs diff=lfs merge=lfs -text
