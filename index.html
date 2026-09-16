@@ -6,20 +6,27 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Buzenval | Un village d'histoire et de nature</title>
 
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
 
 	<style>
-		:root{
-		    --primary:#1c4c7d;
-		    --secondary:#2f7d5d;
-		    --light:#f8f9fb;
-		    --dark:#1e293b;
-		    --text:#475569;
-		    --accent:#d9a441;
+		:root {
+			--primary: #1c4c7d;
+			--secondary: #2f7d5d;
+			--light: #f8f9fb;
+			--dark: #1e293b;
+			--text: #475569;
+			--accent: #d9a441;
 		}
 	</style>
 
 	<link rel="stylesheet" href="sources/style.css">
+	<script src="https://cdn.monpetitcookie.fr/widget.js"
+		data-api-key="mpc_fb1b51b7bea70e23ff3f7ca1eb933c3e7e49df1c7a832ba0">
+		</script>
 
 </head>
 
@@ -125,7 +132,8 @@
 			<div class="history-grid">
 
 				<div>
-					<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80" alt="Histoire de Buzenval">
+					<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80"
+						alt="Histoire de Buzenval">
 				</div>
 
 				<div>
@@ -262,14 +270,14 @@
 	<script src="sources/script.js"></script>
 	<script>
 		// bascule du menu mobile
-		(function(){
+		(function () {
 			const btn = document.querySelector('.nav-toggle');
 			const menu = document.querySelector('.nav-menu');
-			if(!btn || !menu) return;
-			btn.addEventListener('click', ()=> menu.classList.toggle('open'));
-			document.addEventListener('click', (e)=>{
-				if(!menu.classList.contains('open')) return;
-				if(e.target === btn || menu.contains(e.target)) return;
+			if (!btn || !menu) return;
+			btn.addEventListener('click', () => menu.classList.toggle('open'));
+			document.addEventListener('click', (e) => {
+				if (!menu.classList.contains('open')) return;
+				if (e.target === btn || menu.contains(e.target)) return;
 				menu.classList.remove('open');
 			});
 		})();
